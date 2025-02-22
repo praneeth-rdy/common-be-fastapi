@@ -52,7 +52,7 @@ class RequestsTrackerMiddleware(BaseHTTPMiddleware):
         masked_body = self.mask_sensitive_data(body)
 
         data = {'user_id': user_id, 'service': constants.LOGGER_SERVICE_NAME, 'ip': host, 'method': request.method, 'path': f'{request.url.path}', 'query_params': query_params}
-        await core_service.create_one_time_series(collection_name=Collections.REQUEST_TRACKER_V2, meta_data=data, body=masked_body)
+        await core_service.create_one_time_series(collection_name=Collections.REQUEST_TRACKER, meta_data=data, body=masked_body)
 
     def extract_user_id(self, request: Request):
         user_id = ''
