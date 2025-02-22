@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Defaults
-PROXY_API_PREFIX = '/cph'
+PROXY_API_PREFIX = ''
 APP_TITLE = 'Common Mono Service'
 APP_VERSION = '1.0.0'
 
